@@ -1,0 +1,33 @@
+.content-container {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.mainul-s {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    display: block;
+    flex-shrink: 0;
+}
+
+.text-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+    }
+
+    .text-content {
+        min-width: auto;
+    }
+}
