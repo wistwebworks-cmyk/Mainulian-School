@@ -1,5 +1,8 @@
 <div class="header">
-  <h1>Mainulian School</h1>
+  <div class="logo">
+    <h1>Mainulian School</h1>
+  </div>
+  
   <nav class="nav desktop-nav">
     <a href="index.html">Home</a> |
     <a href="about.html">About</a> |
@@ -16,77 +19,180 @@
   <a href="contact.html">Contact</a>
 </div>
     <style>
+      .logo  {
+        
+        border: 4px solid rgba(31, 83, 253, 0.851);
+        border-radius: 20px;
+        box-shadow: #474545 0px 4px 5px;
+
+
+
+        }
         .header {
           display: flex;
           align-items: center;
-          background-color: white;
-          border: 7px solid rgb(59, 172, 210);
-          padding: 15px;
-          border-radius: 10px;
+          background: linear-gradient(135deg, hwb(229 93% 0%) 0%, #d0e1ff 100%);
+          padding: 20px 30px;
+          border-radius: 5px;
+          box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+          margin-bottom: 20px;
         }
 
-        .header h1 {
-          margin: 5px;
+        .header .logo h1 {
+          margin: 0;
+          color: rgb(0, 0, 0);
+          font-size: 2em;
+          font-weight: 700;
+          letter-spacing: -1px;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+          background-color: #e8f0ff;
+          padding: 10px 20px;
+          border-radius: 10px;
+          margin: 0;
         }
+        
         .nav {
           margin-left: auto;
+          display: flex;
+          gap: 40px;
         }
+        
         .nav a {
           text-decoration: none;
-          color: black;
-          font-weight: bold;
+          color: #030202;
+          font-weight: 600;
+          font-size: 1.05em;
+          position: relative;
+          transition: all 0.3s ease;
+          padding: 8px 0;
         }
+        
+        .nav a::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: #0959fa;
+          transition: width 0.3s ease;
+        }
+        
+        .nav a:hover {
+          color: #2925fe;
+          transform: translateY(-2px);
+        }
+        
+        .nav a:hover::after {
+          width: 100%;
+        }
+        
         .menu-icon {
           display: none;
-          font-size: 30px;
+          font-size: 32px;
           cursor: pointer;
           margin-left: auto;
-          padding: 10px;
+          padding: 10px 15px;
+          color: rgb(0, 0, 0);
+          transition: all 0.3s ease;
+          border-radius: 8px;
         }
-        /* Sidebar hidden by default */
+        
+        .menu-icon:hover {
+          background-color: rgba(44, 37, 250, 0.765);
+          transform: scale(1.1);
+        }
+        
+        /* Sidebar styling */
         .sidebar {
           height: 100%;
-          width: 250px;
+          width: 280px;
           position: fixed;
           top: 0;
-          right: -250px;
-          background-color: #ffffff;
-          transition: right 0.3s ease;
-          padding-top: 60px;
+          right: -280px;
+          background: linear-gradient(180deg, #6582ff 0%, #3343d0 100%);
+          transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          padding-top: 70px;
           z-index: 1000;
-          color: black;
+          color: white;
+          box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
         }
+        
         .sidebar.active {
           right: 0;
         }
+        
         .sidebar a, .sidebar .close-btn {
           display: block;
-          color: rgb(0, 0, 0);
-          padding: 16px;
+          color: rgb(249, 246, 246);
+          padding: 18px 25px;
           text-decoration: none;
-          font-size: 20px;
+          font-size: 1.1em;
+          font-weight: 500;
+          transition: all 0.3s ease;
+          border-left: 4px solid transparent;
         }
+        
+        .sidebar a:hover {
+          background-color: rgba(33, 3, 165, 0.843));
+          border-left-color: #221c90;
+          padding-left: 35px;
+        }
+        
         .sidebar .close-btn {
-          font-size: 30px;
+          font-size: 32px;
           text-align: right;
           cursor: pointer;
           position: absolute;
-          top: 10px;
+          top: 15px;
           right: 20px;
-          color: black;
+          color: rgb(0, 0, 0);
+          padding: 8px 15px;
+          border: none;
+          border-left: none;
+          transition: all 0.3s ease;
         }
+        
+        .sidebar .close-btn:hover {
+          transform: rotate(90deg);
+          background-color: rgba(16, 10, 189, 0.864));
+          border-radius: 50%;
+        }
+        
         @media (max-width: 900px) {
           .header {
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
+            padding: 20px;
+          }
+          
+          .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+          }
+          
+          .nav {
+            gap: 20px;
+            margin-left: 0;
+            font-size: 0.95em;
           }
         }
+        
         @media (max-width: 768px) {
           .desktop-nav {
             display: none;
           }
           .menu-icon {
             display: block;
+          }
+          
+          .header h1 {
+            font-size: 1.8em;
+          }
+          
+          .sidebar {
+            width: 250px;
+            right: -250px;
           }
         }
 

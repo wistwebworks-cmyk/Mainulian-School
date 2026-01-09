@@ -1,3 +1,17 @@
+body {
+    background: linear-gradient(to bottom, #e5eefe, #7dbeff, hwb(213 91% 0%));
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', 'Nunito', sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 40px;
+}
+
 .content-container {
     display: flex;
     flex-direction: row;
@@ -30,4 +44,85 @@
     .text-content {
         min-width: auto;
     }
+}
+.text-content h2 {
+    font-size: 54px;
+    margin-bottom: 30px;
+    font-family: 'Poopins', 'Georgia', serif;
+    margin-right: 20px;
+    width: 70%;
+}
+.text-content h5 {
+    font-size: 21px;
+    line-height: 2.1;
+    color: #272727;
+    font-family: 'Open Sans', 'Nunito', sans-serif;
+    width: 70%;
+
+
+    
+}
+.text-content h5 strong {
+    font-weight: bold;
+}
+.all-contacts {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #000000;
+}
+.all-contacts h2 {
+    font-size: 46px;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    text-align: center;
+}
+.all-contacts .contact-grid {
+    font-size: 20px;
+    line-height: 2.1;
+    color: #272727;
+    font-family: 'Open Sans', 'Nunito', sans-serif;
+    text-align: center;
+    background-color: #dfeffd;
+    box-shadow: 60px 50px 50px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border: 7px solid #265cd0;
+    margin-bottom: 30px;
+    border-radius: 40px;
+    width: 20%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.contact-card  {
+    margin-bottom: 20px;
+    color: #000000;
+    text-decoration: none;
+    text-shadow: #000000;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+
+.courses-offered {
+    
+    
+    margin-top: auto;
+}
+.course-btn {
+    background-color: #3566cf;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    
+}
+.course-btn:hover {
+    background-color: transparent
 }
