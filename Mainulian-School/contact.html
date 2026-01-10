@@ -89,7 +89,257 @@ form button {
 
 </head>
 <body>
-    <div id="header-placeholder"></div>
+    <div class="header">
+  <div class="logo">
+    <h1>Mainulian School</h1>
+  </div>
+
+  <nav class="nav desktop-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="programs.html">Programs</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+  <div class="menu-icon" onclick="toggleSidebar()">☰</div>
+</div>
+<div id="sidebar" class="sidebar">
+  <span class="close-btn" onclick="toggleSidebar()">×</span>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="programs.html">Programs</a>
+  <a href="contact.html">Contact Us</a>
+</div>
+    <style>
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .logo h1 {
+        margin: 0;
+        color: #1e40af;
+        font-size: 1.8em;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+        background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        background: white;
+        padding: 16px 40px;
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(59, 130, 246, 0.08);
+        margin-bottom: 20px;
+        border: 1px solid rgba(59, 130, 246, 0.1);
+        position: relative;
+        z-index: 100;
+        backdrop-filter: blur(10px);
+      }
+
+      .nav {
+        margin-left: auto;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .nav a {
+        text-decoration: none;
+        color: #4b5563;
+        font-weight: 600;
+        font-size: 0.95em;
+        position: relative;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        padding: 10px 16px;
+        border-radius: 8px;
+      }
+
+      .nav a::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+        border-radius: 8px;
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 0.3s ease;
+      }
+
+      .nav a:hover {
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      .nav a:hover::before {
+        opacity: 1;
+      }
+
+      .nav a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #3b82f6 0%, #1e40af 100%);
+        transform: translateX(-50%);
+        transition: width 0.3s ease;
+      }
+
+      .nav a:hover::after {
+        width: 80%;
+      }
+
+      .menu-icon {
+        display: none !important;
+        font-size: 28px;
+        cursor: pointer;
+        margin-left: auto;
+        padding: 10px 15px;
+        color: #3b82f6;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+        width: 44px;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .menu-icon:hover {
+        background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+        color: white;
+        transform: scale(1.05);
+      }
+
+      /* Sidebar styling */
+      .sidebar {
+        height: 100%;
+        width: 280px;
+        position: fixed;
+        top: 0;
+        right: -280px;
+        background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+        transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        padding-top: 70px;
+        z-index: 999;
+        color: white;
+        box-shadow: -8px 0 32px rgba(30, 64, 175, 0.25);
+      }
+
+      .sidebar.active {
+        right: 0;
+      }
+
+      .sidebar a, .sidebar .close-btn {
+        display: block;
+        color: rgba(255, 255, 255, 0.9);
+        padding: 16px 24px;
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border-left: 4px solid transparent;
+        position: relative;
+      }
+
+      .sidebar a::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 4px;
+        background: linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .sidebar a:hover {
+        background: rgba(60, 120, 216, 0.2);
+        color: white;
+        padding-left: 32px;
+      }
+
+      .sidebar a:hover::before {
+        opacity: 1;
+      }
+
+      .sidebar .close-btn {
+        font-size: 32px;
+        text-align: right;
+        cursor: pointer;
+        position: absolute;
+        top: 12px;
+        right: 16px;
+        padding: 8px 12px;
+        border: none;
+        border-left: none;
+        transition: all 0.3s ease;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+      }
+
+      .sidebar .close-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: rotate(90deg) scale(1.1);
+      }
+
+      @media (max-width: 900px) {
+        .header {
+          padding: 16px 24px;
+        }
+
+        .logo h1 {
+          font-size: 1.6em;
+        }
+
+        .nav {
+          gap: 6px;
+        }
+
+        .nav a {
+          padding: 8px 12px;
+          font-size: 0.9em;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .desktop-nav {
+          display: none !important;
+        }
+
+        .menu-icon {
+          display: flex !important;
+        }
+
+        .language-switcher {
+          margin-left: 0;
+        }
+
+        .logo h1 {
+          font-size: 1.4em;
+        }
+
+        .sidebar {
+          width: 250px;
+          right: -250px;
+        }
+
+        .header {
+          padding: 12px 16px;
+        }
+      }
+    </style>
 
 <section class="contact-page">
 
@@ -117,9 +367,6 @@ form button {
     <div class="map-box">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.523044679846!2d90.3657449!3d23.7999929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c1006e61a377%3A0x63b6ead188620703!2sMainulian-School!5e0!3m2!1sen!2sbd!4v1767973848845!5m2!1sen!2sbd" width="100%" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-  </div>
-
-  https://www.facebook.com/mnl.khan?__cft__[0]=AZbNdPC13xxTHASUXcJAv1fZKmsDdie09tL393fD2F94Kuy7M5SvA23vbnyxxc0ANksjBxO1jqO7UbDGlgZERvjvmkkhmepr0WmlMXpC28s56_7SBZlRaFHKIpEWKE-dgF5xxEhlMFFgRWPl0djJZbZ7an4K5REetAXtS-7cAg-pQCMLCYusPMXVNBNtRl_ymMM&__tn__=%3C%3C%2CP-R
 </section>
 
 
@@ -128,7 +375,171 @@ form button {
 
 
 
-   <div id="footer-placeholder"></div>
+<div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Mainulian School</h3>
+                <p>The highest standard of academic excellence.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul class="contact-list">
+                    <li><i class="fas fa-map-marker-alt"></i> 856/B, Monipur, Mirpur-2</li>
+                    <li><i class="fas fa-phone"></i> 01858539595</li>
+                    <li><i class="fas fa-whatsapp"></i> 01600233350</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mainulian School. All rights reserved. | Built by <span>Wist Webworks</span></p>
+        </div>
+    </footer>
+
+    <style>
+        .footer {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            color: #e2e8f0;
+            padding: 60px 20px 30px;
+            font-family: 'Roboto', sans-serif;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 0 15px 0;
+            color: #fff;
+            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0 0 15px 0;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-section p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #cbd5e1;
+        }
+
+        .contact-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .contact-list li {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .contact-list li:hover {
+            color: #60a5fa;
+        }
+
+        .contact-list i {
+            color: #3b82f6;
+            width: 18px;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .social-links a:hover {
+            background-color: #3b82f6;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        .footer-bottom span {
+            color: #60a5fa;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                padding: 40px 20px 20px;
+                margin-top: 60px;
+            }
+
+            .footer-content {
+                gap: 30px;
+                grid-template-columns: 1fr;
+            }
+
+            .footer-section h3 {
+                font-size: 1.3rem;
+            }
+
+            .footer-bottom p {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</div>
 
 <script src="script.js"></script>
 </body>
