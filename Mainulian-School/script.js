@@ -21,3 +21,35 @@ function toggleSidebar() {
         console.error("Sidebar element not found!");
     }
 }
+
+// Language switching functionality
+let currentLanguage = localStorage.getItem('language') || 'en';
+
+function switchLanguage(lang) {
+    currentLanguage = lang;
+    localStorage.setItem('language', lang);
+    
+    // Update all elements with data-en and data-bn attributes
+    document.querySelectorAll('[data-en][data-bn]').forEach(element => {
+        if (lang === 'bn') {
+            element.textContent = element.getAttribute('data-bn');
+            element.dir = 'ltr';
+        } else {
+            element.textContent = element.getAttribute('data-en');
+            element.dir = 'ltr';
+        }
+    });
+    
+    // Update active button state
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    document.querySelector(`.lang-${lang}`).classList.add('active');
+}
+
+// Initialize language on page load
+window.addEventListener('DOMContentLoaded', function() {
+    setTimeout(() => {
+        switchLanguage(currentLanguage);
+    }, 100);
+});
