@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("oppenheimer-poster.jpg");
+    background-position: center;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: white;
+    min-height: 100vh;
+}
+
+.container .web-logo {
+    text-decoration: none;
+    color: white;
+    width: 150px;
+    margin-top: 18px;
+    font-size: 20px;
+}
+
+.header {
+    height: 10%;
+}
+
+.header-btn {
+    text-decoration: none !important;
+    border-radius: 30px;
+    padding: 7px 20px;
+    float: right;
+    margin-top: 15px;
+    color: white;
+    background: #107afd !important;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.movie-details {
+    margin: 10% 0 3% 0;
+}
+
+.left-box {
+    color: white;
+    margin: 10px 0;
+    padding: 15px;
+}
+
+.casting img {
+    height: 45px;
+    width: 37px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.buttons {
+    margin-top: 35px;
+    padding: 0;
+}
+
+.watch-btn {
+    text-decoration: none !important;
+    border-radius: 30px;
+    padding: 10px 20px;
+    color: white;
+    background: #107afd !important;
+    font-weight: 500;
+    margin-right: 10px;
+    font-size: medium;
+}
+
+.watchlist-btn {
+    text-decoration: none !important;
+    border-radius: 30px;
+    padding: 10px 20px;
+    color: white;
+    background: #555 !important;
+    font-weight: 500;
+    font-size: medium;
+}
+
+.container i {
+    font-size: 20px;
+    display: flex;
+}
+
+.img-s {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-s img {
+    margin-left: 100px;
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.col-md-7 h3 {
+    margin-top: 30px;
+    color: white;
+}
+
+.s-images img {
+    width: 160px;
+    height: 250px;
+    margin: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.s-images {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+
+.s-images img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+}

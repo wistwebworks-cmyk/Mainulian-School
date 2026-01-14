@@ -1,0 +1,173 @@
+<footer class="footer" aria-label="Site Footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Mainulian School</h3>
+                <p>The highest standard of academic excellence.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul class="contact-list">
+                    <li><i class="fas fa-map-marker-alt"></i> 856/B, Monipur, Mirpur-2</li>
+                    <li><i class="fas fa-phone"></i> <a href="tel:01858539595" style="color:inherit;text-decoration:none;">01858539595</a></li>
+                    <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/8801858539595" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">01858539595</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/mnl.khan" title="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/8801858539595" title="WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 <span>Mainulian School</span>. All rights reserved.<br>
+            Built by <a href="https://www.facebook.com/profile.php?id=61585637975161" title="Wist Webworks" target="_blank" rel="noopener">Wist Webworks</a></p>
+        </div>
+    </footer>
+
+<style>
+        .footer {
+            background: linear-gradient(90deg, #1e293b 0%, #334155 100%);
+            color: #fff;
+            padding: 40px 0 0 0;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            box-shadow: 0 -2px 16px 0 rgba(30,41,59,0.12);
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+        }
+
+        .footer-content {
+            width: 100vw;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            padding-left: 5vw;
+            padding-right: 5vw;
+            box-sizing: border-box;
+        }
+
+        .footer-section h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 0 15px 0;
+            color: #fff;
+            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 0.01em;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0 0 15px 0;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-section p {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #cbd5e1;
+        }
+
+        .contact-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .contact-list li {
+            margin-bottom: 12px;
+            font-size: 1rem;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .contact-list li:hover {
+            color: #60a5fa;
+        }
+
+        .contact-list i {
+            color: #3b82f6;
+            width: 18px;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .social-links a:hover {
+            background-color: #3b82f6;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            font-size: 0.98rem;
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+
+        .footer-bottom span {
+            color: #60a5fa;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                padding: 40px 20px 20px;
+                margin-top: 60px;
+            }
+
+            .footer-content {
+                gap: 30px;
+                grid-template-columns: 1fr;
+            }
+
+            .footer-section h3 {
+                font-size: 1.3rem;
+            }
+
+            .footer-bottom p {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
